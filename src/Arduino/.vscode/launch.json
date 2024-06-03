@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Crist/OneDrive - Universidad de Antioquia/2024-1/ACONDICIONAMIENTO DE SEÑALES/Invernadero/Greenhouse/src/Arduino",
+      "program": "c:/Users/Crist/OneDrive - Universidad de Antioquia/2024-1/ACONDICIONAMIENTO DE SEÑALES/Invernadero/Greenhouse/src/Arduino/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
