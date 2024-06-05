@@ -43,6 +43,8 @@ DHT dht(DHT_PIN, DHT_TYPE);
 double pid_setpoint, pid_input, pid_output;
 PID myPID(&pid_input, &pid_output, &pid_setpoint, 2.0, 5.0, 1.0, DIRECT);
 
+void printAllData(float luz, float agua, float humedadTierra, float humedadAmbiente, float temperatura, int presencia);
+
 void setup() {
   Serial.begin(9600);
 
@@ -87,19 +89,28 @@ void loop() {
   }
 
   // Print sensor values
-  Serial.print("Luxes: ");
-  Serial.println(pid_input);
-  Serial.print("Soil Moisture: ");
-  Serial.println(soilMoisturePercent);
-  Serial.print("Motion Detected: ");
-  Serial.println(motionDetected);
-  Serial.print("Temperature: ");
-  Serial.println(temperature);
-  Serial.print("Humidity: ");
-  Serial.println(humidity);
-  Serial.print("Distance: ");
-  Serial.println(distance);
-  Serial.print("PID Output: ");
-  Serial.println(pid_output);
+  printAllData(pid_input, tank_level, soilMoisturePercent, humidity, temperature, motionDetected);
 
+}
+
+void printAllData(float luz, float agua, float humedadTierra, float humedadAmbiente, float temperatura, int presencia) {
+  Serial.print("L");
+  Serial.print(luz);
+  
+  Serial.print("A");
+  Serial.print(agua);
+  
+  Serial.print("HT");
+  Serial.print(humedadTierra);
+  
+  Serial.print("HA");
+  Serial.print(humedadAmbiente);
+  
+  Serial.print("T");
+  Serial.print(temperatura);
+  
+  Serial.print("P");
+  Serial.print(presencia);
+  
+  Serial.println("X");
 }
